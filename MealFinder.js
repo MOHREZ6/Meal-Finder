@@ -100,11 +100,12 @@ function getRandomMeal() {
 
 mealsEl.addEventListener("click", (e) => {
   const mealInfo = e.target.closest(".meal-info");
-
+  
   if (mealInfo) {
-    var mealID = mealInfo.getAttribute("data-mealid");
+    const mealID = mealInfo.getAttribute("data-mealID");
     getMealById(mealID);
   }
 });
+ 
 submit.addEventListener("submit", searchMeal);
 random.addEventListener("click", getRandomMeal);

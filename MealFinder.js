@@ -98,14 +98,13 @@ function getRandomMeal() {
     });
 }
 
-submit.addEventListener("submit", searchMeal);
-random.addEventListener("click", getRandomMeal);
-
 mealsEl.addEventListener("click", (e) => {
-  var mealInfo = e.explicitOriginalTarget;
+  const mealInfo = e.target.closest(".meal-info");
 
   if (mealInfo) {
     var mealID = mealInfo.getAttribute("data-mealid");
     getMealById(mealID);
   }
 });
+submit.addEventListener("submit", searchMeal);
+random.addEventListener("click", getRandomMeal);
